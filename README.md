@@ -23,6 +23,32 @@ php artisan make:factory ProjectFactory --model="App\Project"
 ```
 
 
+<p> session messages </p>
+
+```
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+
+                <strong>Whoops !</strong> There where some problem with Your input <br>
+                <ul>
+                    @foreach($errors as $error)
+
+                        <li>{{$error}}</li>
+
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+	
+	@if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+
+
+```
 
 
 
