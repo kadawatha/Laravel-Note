@@ -9,6 +9,43 @@
 
 <hr>
 
+<p> pass data betweeen functions </p>
+
+```php
+
+function one()
+{
+    $foo = 'Some value';
+        two($foo);
+}
+
+function two($value)
+{
+    store($value);
+}
+
+
+```
+
+```php
+
+
+public function one()
+{
+    $foo = 'Some value';
+    $this->two($foo);
+}
+
+public function two($value)
+{
+   store($value);
+}
+
+
+```
+
+
+
 <p> Creating Tests  </p>
 
 
