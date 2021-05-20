@@ -117,7 +117,9 @@ protected $guarded = [];
 
 ```
 
+<p> wysiwyg editor for laravel </p>
 
+<a href="https://summernote.org/getting-started/"> https://summernote.org/getting-started/  </a>
 
 <hr>
 
