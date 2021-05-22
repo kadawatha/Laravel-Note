@@ -44,7 +44,14 @@ public function two($value)
 
 ```
 
+```html
 
+ <button  onclick="return confirm('Are you sure?')" class="btn btn-danger">
+	 
+                                       Delete
+</button>
+
+```
 
 <p> Creating Tests  </p>
 
