@@ -9,6 +9,17 @@
 
 <hr>
 
+<p>onlick function </p>
+
+```php
+
+
+      <a href="#" onclick='myFunction({{$product->id}},{{$product->id}})' ><i class="organik-icon-shopping-cart"></i></a>
+
+
+```
+
+
 <p> pass data betweeen functions </p>
 
 ```php
