@@ -14,7 +14,8 @@
 ```php
 
 
-      <a href="#" onclick='myFunction({{$product->id}},{{$product->id}})' ><i class="organik-icon-shopping-cart"></i></a>
+<a href="#" onclick='myFunction({{$product->id}},{{'"'.$product->name.'"'}},{{$product->price}},{{$product->weight}},{{$product->quantity}})'><i class="organik-icon-shopping-cart"></i></a>
+
 
 
 ```
