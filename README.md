@@ -484,6 +484,39 @@ sudo apt install nodejs
 
 ```
 
+<p>  The module n makes version-management easy:  </p>
+
+
+```
+
+sudo npm install n -g
+
+```
+
+
+```
+
+sudo n stable
+
+```
+
+
+```
+sudo n latest
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### ssl install
