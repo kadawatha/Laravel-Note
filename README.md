@@ -21,6 +21,60 @@
 ```
 
 
+
+<h3>Laravel 8 Create JSON Text File for Download using File and Response </h3>
+
+<p>controller </p>
+
+```php
+
+
+
+
+<?php
+namespace App\Http\Controllers;
+
+use Response;
+use View;
+use File;
+
+class JsonController extends Controller
+{
+
+	public function jsonFileDownload()
+    {
+	  $data = json_encode(['Text One', 'Text Two', 'Text Three']);
+	  
+      $jsongFile = time() . '_file.json';
+
+	  File::put(public_path('/upload/json/'.$jsongFile), $data);
+
+	  return Response::download(public_path('/upload/jsonfile/'.$jsongFile));
+	}
+
+}
+
+
+
+
+
+
+```
+
+
+<p> Get inside the routes/web.php and add the code to create a route: </p>
+
+
+
+```php
+
+Route::get('json-file-download', array('as'=> 'jsonFileDownload', 'uses' => 'JsonController@jsonFileDownload'));
+
+```
+
+
+
+
 <p> pass data betweeen functions </p>
 
 ```php
