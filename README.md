@@ -74,6 +74,11 @@ Route::get('json-file-download', array('as'=> 'jsonFileDownload', 'uses' => 'Jso
 
 
 
+<hr>
+
+<hr>
+
+
 
 <p> pass data betweeen functions </p>
 
