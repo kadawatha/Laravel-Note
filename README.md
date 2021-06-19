@@ -401,6 +401,26 @@ The best way to solve this problem is, go to directory laravel/bootstrap/cache a
 
 <hr>
 
+
+
+<p> Error -  Could not find driver : Illuminate\Database\QueryException could not find driver (SQL: select * from `list`)  </p>
+
+
+```
+
+
+
+# default
+sudo apt install php-mysql
+# for specific version of php (e.g. php7.4)
+sudo apt install php7.4-mysql
+
+
+
+
+```
+
+
 ### laravel auth
 
 
