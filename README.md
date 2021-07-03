@@ -889,6 +889,23 @@ Part 3
 + `FLUSH PRIVILEGES;` to apply all changes
 + `mysql -u root -p` to access db from now on, enter password `STRONG_PASSWORD_HERE`
 
+
+### PHPMYADMIN
+
+```
+
+sudo apt update
+
+sudo apt install phpmyadmin
+
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+
+
+```
+
+
+
+
 ### PHP & Basic Nginx
 
 + `sudo add-apt-repository universe` to add software repo
