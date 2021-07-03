@@ -932,6 +932,37 @@ server {
         }
 }
 ```
+
+
+```
+
+
+server {
+        listen 80;
+        root /var/www/html;
+        index index.php index.html index.htm index.nginx-debian.html;
+        server_name YOUR.DOMAIN.COM;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        }
+
+        location ~ /\.ht {
+                deny all;
+        }
+}
+
+
+
+
+```
+
+
 + `sudo ln -s /etc/nginx/sites-available/YOUR.DOMAIN.COM /etc/nginx/sites-enabled/` to create symlink to enabled sites
 + `sudo unlink /etc/nginx/sites-enabled/default` to remove default link
 + `sudo nginx -t` test the whole config
