@@ -420,6 +420,13 @@ sudo apt install php7.4-mysql
 
 ```
 
+```
+sudo apt-get install nginx php7.4-fpm
+
+```
+
+
+
 
 ### laravel auth
 
