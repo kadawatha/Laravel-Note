@@ -484,14 +484,29 @@ sudo chmod a+rwx /var/szDirectoryName
 `CREATE DATABASE soap_store;`
 
 ``
-### Fix Brightness Using a Software
+### Completely uninstall mysql-server
 
 
 ```
+sudo apt remove --purge mysql-server
+sudo apt purge mysql-server
+sudo apt autoremove
+sudo apt autoclean
+sudo apt remove dbconfig-mysql
 
-sudo add-apt-repository ppa:apandada1/brightness-controller
-sudo apt update
-sudo apt install brightness-controller
+
+sudo systemctl stop mysql
+
+
+sudo apt purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+
+
+sudo rm -rf /etc/mysql /var/lib/mysql /var/log/mysql
+
+
+sudo apt autoremove
+
+sudo apt autoclean
 
 
 ```
