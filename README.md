@@ -920,7 +920,9 @@ sudo apt update
 
 sudo apt install phpmyadmin
 
-sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+sudo ln -s /usr/share/phpmyadmin /var/www/html
+
+sudo systemctl restart nginx OR sudo service nginx restart 
 
 
 ```
