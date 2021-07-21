@@ -205,108 +205,17 @@ protected $guarded = [];
 
 ```php
 
-
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-
-use Faker\Factory as Faker;
-
-class DatabaseSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $faker = Faker::create();
-    	foreach (range(1,10) as $index) {
-	        DB::table('users')->insert([
-	            'name' => $faker->name,
-	            'email' => $faker->email,
-	            'password' => bcrypt('secret'),
-	        ]);
-	}
-    }    
-}
-
+use App\Http\Controllers\UserController;
+// UserController
+Route::get('users', '[UserController::class, 'index']');
+Route::post('users', '[UserController::class, 'post']');
+Route::put('users/{id}', '[UserController::class, 'update']');
+Route::delete('users/{id}', '[UserController::class, 'delete']');
 
 ```
 
 
 
-<p> data base seeding </p>
-
-```
-
-php artisan make:seeder CustomersTableSeeder
-
-```
-
-```php
-
-<?php
-
-use App\Customer;
-use Illuminate\Database\Seeder;
-
-class CustomersTableSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $faker = Faker\Factory::create();
-        for ($i=0; $i <1000; $i++){
-            Customer::create(
-                [
-                    "name"=>$faker->name,
-                    "email"=>$faker->email,
-                    "phone"=>$faker->phoneNumber,
-                    "address"=>$faker->address,
-                    "country"=>$faker->country,
-                    "rating"=>$faker->randomDigit,
-                ]
-            );
-        }
-    }
-}
-
-```
-
-<p> in DatabaseSeeder.php </p>
-
-```php
-
-
-<?php
-
-use Illuminate\Database\Seeder;
-
-class DatabaseSeeder extends Seeder
-{
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
-    {
-//        $this->call(PropertySeeder::class);
-//        $this->call(TechnicianSeeder::class);
-         $this->call(CustomersTableSeeder::class);
-    }
-}
-
-
-
-```
-
-<p> php artisan db:seed </p>
 
 <hr>
 
