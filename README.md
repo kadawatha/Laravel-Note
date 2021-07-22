@@ -207,10 +207,11 @@ protected $guarded = [];
 
 use App\Http\Controllers\UserController;
 // UserController
-Route::get('users', '[UserController::class, 'index']');
-Route::post('users', '[UserController::class, 'post']');
-Route::put('users/{id}', '[UserController::class, 'update']');
-Route::delete('users/{id}', '[UserController::class, 'delete']');
+
+Route::get('/', [App\Http\Controllers\UserController::class, 'index'])->name('front');
+Route::post('/users', [App\Http\Controllers\UserController::class, 'post'])->name('post');
+Route::put('/users/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('update');
+Route::delete('/users/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('delete');
 
 ```
 
