@@ -76,6 +76,16 @@ Route::get('json-file-download', array('as'=> 'jsonFileDownload', 'uses' => 'Jso
 
 <hr>
 
+<p> Require this package with composer. It is recommended to only require the package for development. </p>
+
+```
+
+composer require barryvdh/laravel-debugbar --dev
+
+php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
+
+```
+
 <hr>
 
 
