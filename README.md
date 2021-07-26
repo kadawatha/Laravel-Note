@@ -147,6 +147,30 @@ php artisan make:factory ProjectFactory --model="App\Project"
 
 ```
 
+<p>auth check </p>
+
+
+```php
+
+@if(!Auth::check())
+
+  //code 
+
+@else
+ 
+ 
+ @if(auth()->user()->id != $vendor->id)
+ 
+
+@endif
+
+
+@endif
+
+```
+
+
+
 
 <p> session messages </p>
 
