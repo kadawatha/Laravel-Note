@@ -1,13 +1,142 @@
 # Laravel-Notes
 
-<h5> Laravel Old Version Download </h5>
+<h6> Laravel Old Version Download </h5>
 
-### composer create-project laravel/laravel your-project-name 5.0
+<p> composer create-project laravel/laravel your-project-name 5.0 </p>
 
-<hr>
-    return view('profile',array('user'=>Auth::user()))->with('years',Group::all())->with('occupations',Occupation::all());
 
-<hr>
+
+
+<h3>Laravel 8.x Custom Pagination Example Tutorial  </h3>
+
+```
+
+php artisan vendor:publish --tag=laravel-pagination
+
+
+in router
+
+Route::get('/', 'TestController@index');
+
+
+in controller
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class TestController extends Controller
+{
+    public function index()
+    {
+    	$users = \App\User::paginate(7);
+    	
+        return view('welcome',compact('users'));
+    }
+}
+
+
+
+```
+
+<p> resources/views/vendor/pagination/custom.blade.php  </p>
+
+```php
+
+@if ($paginator->hasPages())
+    <ul class="pager">
+       
+        @if ($paginator->onFirstPage())
+            <li class="disabled"><span>← Previous</span></li>
+        @else
+            <li><a href="{{ $paginator->previousPageUrl() }}" rel="prev">← Previous</a></li>
+        @endif
+
+
+      
+        @foreach ($elements as $element)
+           
+            @if (is_string($element))
+                <li class="disabled"><span>{{ $element }}</span></li>
+            @endif
+
+
+           
+            @if (is_array($element))
+                @foreach ($element as $page => $url)
+                    @if ($page == $paginator->currentPage())
+                        <li class="active my-active"><span>{{ $page }}</span></li>
+                    @else
+                        <li><a href="{{ $url }}">{{ $page }}</a></li>
+                    @endif
+                @endforeach
+            @endif
+        @endforeach
+
+
+        
+        @if ($paginator->hasMorePages())
+            <li><a href="{{ $paginator->nextPageUrl() }}" rel="next">Next →</a></li>
+        @else
+            <li class="disabled"><span>Next →</span></li>
+        @endif
+    </ul>
+@endif 
+
+```
+
+<p> resources/views/welcome.blade.php </p>
+
+```php
+
+@extends('layouts.app')
+@push('style')
+	<style type="text/css">
+		.my-active span{
+			background-color: #5cb85c !important;
+			color: white !important;
+			border-color: #5cb85c !important;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+@endpush
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                
+                  <table class="table table-stripped">
+                  	<thead>
+                  		<tr>
+                  			<th>No</th>
+                  			<th>Name</th>
+                  			<th>Email</th>
+                  		</tr>
+                  	</thead>
+                  	<tbody>
+                  		@forelse($users as $user)
+                  		<tr>
+                  			<td>{{ $loop->index + 1 }}</td>
+                  			<td>{{ $user->name }}</td>
+                  			<td>{{ $user->email }}</td>
+                  		</tr>
+                  		@empty
+                  		<p>No user found!</p>
+                  		@endforelse
+                  	</tbody>
+                  </table>
+               {{ $users->links('vendor.pagination.custom') }}
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+ 
+
+
+```
+
 
 <p>onlick function </p>
 
