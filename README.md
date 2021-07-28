@@ -4,7 +4,13 @@
 
 <p> composer create-project laravel/laravel your-project-name 5.0 </p>
 
+```html
 
+<div class="d-flex justify-content-center">
+   <div>Bootstrap content center</div>
+</div>
+
+```
 
 
 <h3>Laravel 8.x Custom Pagination Example Tutorial  </h3>
