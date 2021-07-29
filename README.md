@@ -12,6 +12,12 @@
 
 ```
 
+```php
+
+  <a href="{{route('blog.show',$blog->id)}}" class="block-20 d-flex align-items-end" style="background-image: url('img/{{$blog->image}}');">
+
+```
+
 
 <h3>Laravel 8.x Custom Pagination Example Tutorial  </h3>
 
