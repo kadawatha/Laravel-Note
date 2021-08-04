@@ -2,6 +2,19 @@
 
 <h6> Laravel Old Version Download </h5>
 
+
+```
+
+SUBTOTAL
+
+TOTAL
+
+GRAND TOTAL
+
+```
+
+
+
 <p> composer create-project laravel/laravel your-project-name 5.0 </p>
 
 ```html
