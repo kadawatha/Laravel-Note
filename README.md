@@ -3,6 +3,7 @@
 <h6> Laravel Old Version Download </h5>
 
 
+
 ```
 
 UNIT PRICE
@@ -482,6 +483,18 @@ The best way to solve this problem is, go to directory laravel/bootstrap/cache a
 
 ```
 
+
+
+<p>  Email Verification Template change </p>
+
+
+
+```
+
+vendor/laravel/framework/src/Illuminate/Mail/resources/views/html
+
+
+```
 
 
 
