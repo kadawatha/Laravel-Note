@@ -16,6 +16,17 @@ GRAND TOTAL
 
 ```
 
+```
+<ul class="navbar-nav desktop-navbar">
+<li class="nav-item {{(request()->segment(1) == '') ? 'active' : '' }}"><a href="{{route('front')}}" class="nav-link pl-0">Home</a></li>
+ <li class="nav-item {{(request()->segment(1) == 'about') ? 'active' : '' }}"><a href="{{route('about')}}" class="nav-link">About</a></li>
+ <li class="nav-item {{(request()->segment(1) == 'courses') ? 'active' : '' }}"><a href="{{route('courses')}}" class="nav-link">Courses</a></li>
+<li class="nav-item {{(request()->segment(1) == 'teacher') ? 'active' : '' }}"><a href="{{route('teacher')}}" class="nav-link">Study Abroad</a></li>
+ <li class="nav-item {{(request()->segment(1) == 'blog') ? 'active' : '' }}"><a href="{{route('blog')}}" class="nav-link">News & Events</a></li>
+<li class="nav-item {{(request()->segment(1) == 'contact') ? 'active' : '' }}"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
+</ul>
+
+```
 
 
 <p> composer create-project laravel/laravel your-project-name 5.0 </p>
