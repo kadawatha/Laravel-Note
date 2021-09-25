@@ -8,7 +8,7 @@ paypal sand box testing
 
 visa - 4012888888881881
 expire - 02/23
-code - 123
+pin - 123
 
 ```
 
